@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit a Todo item</title>
+  </head>
+  <body>
+    {{#editItem}}
+    <form class="" action="/makeEdit" method="post">
+      <label for="">Edit</label>
+      <input type="text" name="name" value="{{item}}">
+      <input type="hidden" name="id" value="{{id}}">
+      <input type="submit" name="" value="Save Edit?">
+    </form>
+    {{/editItem}}
+    <form class="" action="/" method="post">
+      <input type="text" name="" value="Back to the Todo List">
+    </form>
+  </body>
+</html>

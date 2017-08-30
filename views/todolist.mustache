@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>A Rocking TODO list for ben to grade</title>
+  </head>
+  <body>
+    <h1>My ToDo List:</h1>
+    <form class="" action="/addItem" method="post">
+      <label for="">Todo:</label>
+      <input type="text" name="item" placeholder="Hide the easter eggs!">
+      <input type="submit" name="" value="Add to list!">
+    </form>
+    <h2>Things todo:</h2>
+    <ul>
+    {{#todolist}}
+    <li>
+    <form action="/mark/{{id}}" method="post">
+    {{#completed}}
+      <label for=""><del>{{item}}</del></label>
+    {{/completed}}
+    {{^completed}}
+      <label for="">{{item}}</label>
+      <input type="submit" value="Mark as completed.">
+    {{/completed}}
+    </form>
+    <form class="" action="/goToEdit/{{id}}" method="post">
+      <input type="submit" name="" value="edit">
+    </form>
+    <form class="" action="/remove/{{id}}" method="post">
+      <input type="submit" name="" value="Delete">
+    </form>
+    </li>
+    {{/todolist}}
+  </ul>
+<form action="/removeCompleted" method="post">
+  <input type="submit" value="Remove all completed items!">
+</form>
+  </body>
+</html>
